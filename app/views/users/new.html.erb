@@ -1,0 +1,40 @@
+<br/>
+<br/>
+<br/>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for @user, html: {class: "well"} do |f| %>
+      <h2>Sign up!</h2>
+
+      <% if @user.errors.present? %>
+        <div class="alert alert-danger">
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :date_of_bith %>
+        <%= f.date_field :date_of_bith, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Sign up!", class: "btn btn-primary" %>
+      </div>
+
+    <% end %>
+  <div>
+</div>

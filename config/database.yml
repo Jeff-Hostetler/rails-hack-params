@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+
+development:
+  <<: *default
+  database: rails-hack-params-development
+
+test:
+  <<: *default
+  database: rails-hack-params-test
+
+production:
+  <<: *default
+  database: rails-hack-params-production
